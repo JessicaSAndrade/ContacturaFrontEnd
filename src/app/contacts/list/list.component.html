@@ -22,15 +22,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of collection.data | paginate: config">
-                    <th data-label="Nome">{{item.nome}}</th>
+                <tr *ngFor="let item of contactLits | paginate: config">
+                    <th data-label="Nome">{{item.name}}</th>
                     <td data-label="Email">{{item.email}}</td>
-                    <td data-label="Fone">{{item.fone}}</td>
+                    <td data-label="Fone">{{item.phone}}</td>
                     <td data-label="Menu">
                         <div class="button_check_color">
                             <button class="buttons-first-position" 
-                            mat-raised-button color="accent">Excluir</button>
-                            <button mat-raised-button color="warn">Editar</button>
+                            mat-raised-button color="accent" (click)="deleteContacts(item.id)">Excluir</button>
+                            <button mat-raised-button color="warn" (click)="editContact(item)">Editar</button>
+                            <button mat-raised-button color="warn" (click)="find(item.id)">Pesquisar</button>
                         </div>
                     </td>
                 </tr>

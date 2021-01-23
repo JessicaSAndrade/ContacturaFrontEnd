@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid){
       localStorage.setItem('token', 'fucturasupertopmelhorcursoeodeangularesprint');
       localStorage.setItem('admin', 'true');
+      localStorage.setItem('username', this.loginForm.get('username').value);
+      localStorage.setItem('password', this.loginForm.get('password').value);
       this.router.navigate(['/contacts-list']);
     }
     else{
