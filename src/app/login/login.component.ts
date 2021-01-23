@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   }
   login(){
     if (this.loginForm.valid){
+      localStorage.setItem('token', 'fucturasupertopmelhorcursoeodeangularesprint');
+      localStorage.setItem('admin', 'true');
       this.router.navigate(['/contacts-list']);
     }
     else{

@@ -7,18 +7,19 @@
         </span>
 
         <!-- Menu responsivo para web (Minimo de 769px) -->
-        <a class="logo">Logo</a>
+        <!-- <a class="logo">Logo</a> -->
+        <span class="font-style"><img class="logo_space logo" src="../../../assets/imgs/servico-24-horas-para-smartphones.svg">Contactura</span>
 
         <!-- Lista de rotas do menu -->
         <ul class="main-nav" id="desktop-menu">
             <li>
-                <a routerLink="/contacts-create-edit" class="nav-links">Contatos</a>
+                <a routerLink="/contacts-list" class="nav-links">Contatos</a>
+            </li>
+            <li *ngIf="admin != 'false'">
+                <a routerLink="/user-list" class="nav-links">Usuários</a>
             </li>
             <li>
-                <a routerLink="/user-create-edit" class="nav-links">Usuários</a>
-            </li>
-            <li>
-                <a routerLink="/login" class="nav-links">Logout</a>
+                <a (click)="logout()" class="nav-links">Logout</a>
             </li>
         </ul>
     </nav>
